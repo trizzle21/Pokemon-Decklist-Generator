@@ -31,26 +31,6 @@ npm run dev
 
 Open your browser to http://localhost:5173
 
-### 📦 Project Structure
-
-.
-
-├── src/
-
-│ ├── components/ # React UI components
-
-│ ├── utils/ # Parsing, PDF generation logic
-
-│ ├── pages/ # Route-level pages (Next.js or similar)
-
-│ └── types/ # TypeScript type definitions
-
-├── public/ # Static assets
-
-├── decklist.pdf.ts # Core PDF generation entrypoint
-
-├── README.md
-
 ### 🛠️ Contributing
 
 I love community contributions! Here’s how you can help:
