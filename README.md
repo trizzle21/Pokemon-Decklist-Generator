@@ -11,7 +11,7 @@ An open source tool for uploading trading card game decklists and exporting them
 ### 🚀 Getting Started
 
 - Prerequisites
-  - Node.js (>= 18.x)
+  - Node.js (>= 22.x)
   - npm
   - A modern browser
 
@@ -19,7 +19,7 @@ An open source tool for uploading trading card game decklists and exporting them
 
 ```
 git clone https://github.com/trizzle21/Pokemon-Decklist-Generator
-cd decklist-pdf-generator
+cd Pokemon-Decklist-Generator/
 npm install
 ```
 
