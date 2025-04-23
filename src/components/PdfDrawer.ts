@@ -3,11 +3,6 @@ import { ParsedFormData } from './PdfDownloader';
 
 import { getSheetMappingFromFormVersion, SheetMapping } from './PokemonSheetMappingConstants';
 
-const DEFAULT_STARTING_POKEMON: number = 587;
-const DEFAULT_STARTING_TRAINER: number = 410;
-const DEFAULT_STARTING_ENERGY: number = 128;
-
-
 const drawDivision = async (page : PDFPage, division: string, sheetMapping: SheetMapping) => {
     if (division === "junior") {
         page.drawText("X", {
@@ -84,7 +79,6 @@ export const drawOnPDF = async (page : PDFPage, formData: ParsedFormData) => {
     drawFormat(page, formData.format, sheetMapping);
 
     // Pokemon:
-    console.log(formData.decklist)
     if (formData.decklist) {
 
         const allPokemon = formData.decklist.pokemon;
