@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { PDFDocument } from "pdf-lib";
 import { drawOnPDF } from './PdfDrawer';
-import { FormData, FormVersion } from './DecklistInputForm';
+import { FormData } from './DecklistInputForm';
 import { Decklist, parseDeckList } from './DeckListParser';
+import { FormVersion } from './FormVersion';
 
 interface PdfDownloaderProps {
   formData: FormData;

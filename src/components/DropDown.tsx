@@ -1,5 +1,5 @@
 import React from "react";
-import { FormVersion } from './DecklistInputForm';
+import { FormVersion } from './FormVersion';
 
 interface DropDownProps {
   name: string;

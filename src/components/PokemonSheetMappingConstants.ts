@@ -1,4 +1,4 @@
-import { FormVersion } from "./DecklistInputForm";
+import { FormVersion } from './FormVersion';
 
 // const DEFAULT_STARTING_POKEMON: number = 587;
 // const DEFAULT_STARTING_TRAINER: number = 410;
