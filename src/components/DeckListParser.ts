@@ -1,8 +1,11 @@
+import { Regulations } from './RegulationFetcher'; 
+
 export type Card = {
     quantity: string;
     name: string;
     set?: string;
     number?: string;
+    regulation?: string
 };
 
 export type Decklist = {
@@ -24,11 +27,13 @@ export const parseDeckList = (decklistString: string): Decklist => {
 
             if (match) {
                 const [, quantity, name, set, number] = match;
+                const regulation: string = Regulations.get(set + ":" + number) ?? '';
                 cards.push({
                     quantity: quantity,
                     name: name.trim(),
                     set: set.trim(),
                     number: number.trim(),
+                    regulation: regulation.trim() 
                 });
             } else {
                 const energyMatch = line.match(/^(\d+)\s+([^\d]+)$/);

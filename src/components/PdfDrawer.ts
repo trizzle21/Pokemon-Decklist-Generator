@@ -105,6 +105,12 @@ export const drawOnPDF = async (page : PDFPage, formData: ParsedFormData) => {
                 y: pokemonY,
                 size: sheetMapping.decklist.pokemon.set.size,
             });
+            page.drawText(pokemon.regulation || '', {
+                x: sheetMapping.decklist.pokemon.regulation.x,
+                y: pokemonY,
+                size: sheetMapping.decklist.pokemon.regulation.size,
+            });
+
             pokemonY -= 9;
         })
 

@@ -1,9 +1,5 @@
 import { FormVersion } from './FormVersion';
 
-// const DEFAULT_STARTING_POKEMON: number = 587;
-// const DEFAULT_STARTING_TRAINER: number = 410;
-// const DEFAULT_STARTING_ENERGY: number = 128;
-
 
 type location = {
   x: number;
@@ -37,6 +33,7 @@ export type SheetMapping = {
       name: location;
       set: location;
       number: location;
+      regulation: location;
     };
     trainer: {
       quantity: location;
@@ -75,6 +72,7 @@ export const surgingSparksSheetMapping: SheetMapping = {
             name: { x: 300, y: 587, size: 8},
             set: { x: 480, y: 587, size: 8},
             number: { x: 510, y: 587, size: 8},
+            regulation: { x: 530, y: 587, size: 8},
         },
         trainer: {
           quantity: { x: 270, y: 410, size: 10},
@@ -111,8 +109,9 @@ export const journeyTogetherSheetMapping: SheetMapping = {
       pokemon: {
           quantity: { x: 270, y: 648, size: 8},
           name: { x: 300, y: 648, size: 8},
-          set: { x: 480, y: 648, size: 8},
-          number: { x: 510, y: 648, size: 8},
+          set: { x: 460, y: 648, size: 8},
+          number: { x: 500, y: 648, size: 8},
+          regulation: { x: 540, y: 648, size: 8},
       },
       trainer: {
         quantity: { x: 270, y: 470, size: 10},
