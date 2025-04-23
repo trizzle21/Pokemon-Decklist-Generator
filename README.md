@@ -1,12 +1,6 @@
 ## 🃏 Decklist PDF Generator
 
-An open source tool for uploading trading card game decklists and exporting them as tournament-legal PDFs.
-
-### Features
-
-- Upload a decklist in plain text or structured format
-- Automatically formats and validates your list
-- Exports a printable PDF suitable for tournaments
+An open source tool for uploading Pokemon trading card game decklists and exporting them as tournament-legal PDFs.
 
 ### 🚀 Getting Started
 
