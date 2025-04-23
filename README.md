@@ -17,26 +17,38 @@ An open source tool for uploading trading card game decklists and exporting them
 
 ### Installation
 
+```
 git clone https://github.com/trizzle21/Pokemon-Decklist-Generator
 cd decklist-pdf-generator
 npm install
+```
 
 ### Running Locally
 
+```
 npm run dev
+```
 
 Open your browser to http://localhost:5173
 
 ### 📦 Project Structure
 
 .
+
 ├── src/
+
 │ ├── components/ # React UI components
+
 │ ├── utils/ # Parsing, PDF generation logic
+
 │ ├── pages/ # Route-level pages (Next.js or similar)
+
 │ └── types/ # TypeScript type definitions
+
 ├── public/ # Static assets
+
 ├── decklist.pdf.ts # Core PDF generation entrypoint
+
 ├── README.md
 
 ### 🛠️ Contributing
@@ -49,7 +61,9 @@ git clone https://github.com/trizzle21/Pokemon-Decklist-Generator
 
 2. Create a Branch
 
+```
 git checkout -b feature/my-new-feature
+```
 
 3. Make Your Changes
 
@@ -59,12 +73,16 @@ git checkout -b feature/my-new-feature
 
 4. Run Lint & Build
 
+```
 npm run lint
 npm run build
+```
 
 5. Push and Create a PR
 
+```
 git push origin feature/my-new-feature
+```
 
 Open a pull request on GitHub with a clear description of your change.
 
