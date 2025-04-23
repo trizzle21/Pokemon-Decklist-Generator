@@ -91,9 +91,9 @@ export const journeyTogetherSheetMapping: SheetMapping = {
     name: {x: 95, y: 760, size: 10},
     playerId: {x: 280, y: 760, size: 10},
     dob: {
-      month: { x: 500, y: 760, size: 10},
-      day: { x: 525, y: 760, size: 10},
-      year: { x: 550, y: 760, size: 10}
+      month: { x: 490, y: 760, size: 10},
+      day: { x: 515, y: 760, size: 10},
+      year: { x: 545, y: 760, size: 10}
     },
     division: {
       junior:  { x: 368, y: 719, size: 12},

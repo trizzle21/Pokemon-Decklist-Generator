@@ -38,11 +38,14 @@ export const PlayerForm: React.FC = () => {
 
   return (
     <form className="player-form">
-      <Dropdown 
-        name="formVersion"
-        value={formData.formVersion}
-        onChange={handleChange}
-      />
+    <div className="form-group">
+        <label htmlFor="format">Version:</label>
+        <Dropdown 
+          name="formVersion"
+          value={formData.formVersion}
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="form-group">
         <label htmlFor="name">Name (First and Last):</label>
