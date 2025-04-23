@@ -125,7 +125,11 @@ export const PlayerForm: React.FC = () => {
         />
 
       <div className="form-group">
-        <label htmlFor="decklist">Decklist (from LimitlessTCG)</label>
+      <br/>
+
+        <label htmlFor="decklist">
+          Decklist (from <a href="https://limitlesstcg.com">LimitlessTCG</a> or <a href="https://my.limitlesstcg.com/builder">Limitless Deckbuilder</a>)
+        </label>
         <textarea
           id="decklist"
           name="decklist"
