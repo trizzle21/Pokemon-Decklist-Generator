@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 import { PDFDocument } from "pdf-lib";
 import { drawOnPDF } from './PdfDrawer';
-import { FormData } from './DecklistInputForm';
+import { FormData, FormVersion } from './DecklistInputForm';
 import { Decklist, parseDeckList } from './DeckListParser';
-// import { Decklist } from './DeckListParser';
 
 interface PdfDownloaderProps {
   formData: FormData;
@@ -21,7 +20,8 @@ export type ParsedFormData = {
   dob: DateOfBirth;
   format: string;
   division: string;
-  decklist: Decklist;
+  decklist: Decklist | undefined;
+  formVersion: FormVersion;
 }
 
 export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData }) => {
@@ -50,14 +50,18 @@ export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const parsedDecklist = parseDeckList(formData.decklist);
+    let parsedDecklist;
+    if (formData.decklist) {
+      parsedDecklist = parseDeckList(formData.decklist);
+    }
     const parsedData: ParsedFormData = {
       name: formData.name,
       playerId: formData.playerId,
       dob: parseDateOfBirth(formData.dob),
       format: formData.format,
       division: formData.division,
-      decklist: parsedDecklist
+      decklist: parsedDecklist,
+      formVersion: formData.formVersion
     }
     modifyExistingPDF(parsedData)
   }
@@ -72,7 +76,8 @@ export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData }) => {
 
     try {
       // Fetch an existing PDF (replace with your file path or URL)
-      const response = await fetch("/play-pokemon-deck-list-a4-ssp.pdf");
+      // const response = await fetch("/play-pokemon-deck-list-a4-ssp.pdf");
+      const response = await fetch("/" + formData.formVersion);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

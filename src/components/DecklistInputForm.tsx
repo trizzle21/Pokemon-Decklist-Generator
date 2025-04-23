@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PdfDownloader } from './PdfDownloader';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Dropdown from './DropDown';
 
 export type FormData = {
   formVersion: FormVersion;
@@ -15,11 +15,12 @@ export type FormData = {
 
 export enum FormVersion {
   SurgingSparks = "play-pokemon-deck-list-a4-ssp.pdf",
+  JourneyTogether = "play-pokemon-deck-list-a4-jtg.pdf"
 }
 
 export const PlayerForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    formVersion: FormVersion.SurgingSparks,
+    formVersion: FormVersion.JourneyTogether,
     name: '',
     playerId: '',
     dob: '',
@@ -35,26 +36,13 @@ export const PlayerForm: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-
   return (
     <form className="player-form">
-      <div>
-        <Select onValueChange={handleChange}>
-          <SelectTrigger className="w-64">
-            <SelectValue placeholder="Select an option" />
-          </SelectTrigger>
-          <SelectContent>
-            {Object.values(FormVersion).map((option) => (
-              <SelectItem key={option} value={option}>
-                {option}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-
-      </div>
-
+      <Dropdown 
+        name="formVersion"
+        value={formData.formVersion}
+        onChange={handleChange}
+      />
 
       <div className="form-group">
         <label htmlFor="name">Name (First and Last):</label>

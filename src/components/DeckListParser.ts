@@ -55,7 +55,7 @@ export const parseDeckList = (decklistString: string): Decklist => {
         const [header] = section.split("\n");
         const type = header.split(":")[0].toLowerCase();
 
-
+        console.log(type)
         if (type === "pokémon") {
             decklist.pokemon = parseSection(section);
         } else if (type === "trainer") {
