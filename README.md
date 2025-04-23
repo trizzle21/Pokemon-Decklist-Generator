@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+## 🃏 Decklist PDF Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An open source tool for uploading trading card game decklists and exporting them as tournament-legal PDFs.
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Upload a decklist in plain text or structured format
+- Automatically formats and validates your list
+- Exports a printable PDF suitable for tournaments
 
-## Expanding the ESLint configuration
+### 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Prerequisites
+  - Node.js (>= 18.x)
+  - npm
+  - A modern browser
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+git clone https://github.com/trizzle21/Pokemon-Decklist-Generator
+cd decklist-pdf-generator
+npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Running Locally
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+npm run dev
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Open your browser to http://localhost:5173
+
+### 📦 Project Structure
+
+.
+├── src/
+│ ├── components/ # React UI components
+│ ├── utils/ # Parsing, PDF generation logic
+│ ├── pages/ # Route-level pages (Next.js or similar)
+│ └── types/ # TypeScript type definitions
+├── public/ # Static assets
+├── decklist.pdf.ts # Core PDF generation entrypoint
+├── README.md
+
+### 🛠️ Contributing
+
+I love community contributions! Here’s how you can help:
+
+1. Clone the Repo
+
+git clone https://github.com/trizzle21/Pokemon-Decklist-Generator
+
+2. Create a Branch
+
+git checkout -b feature/my-new-feature
+
+3. Make Your Changes
+
+- Follow existing code style and linting rules
+- Add tests if applicable
+- Keep commits focused and descriptive
+
+4. Run Lint & Build
+
+npm run lint
+npm run build
+
+5. Push and Create a PR
+
+git push origin feature/my-new-feature
+
+Open a pull request on GitHub with a clear description of your change.
+
+### 🧪 Running Tests
+
+TODO: Need testing infrastructure
+
+### 💡 Ideas to Contribute
+
+- Tests
+- CSS improvements
+- componentize the form fields
+- Clean up components and more tests
+
+### 📄 License
+
+[License](./License)
