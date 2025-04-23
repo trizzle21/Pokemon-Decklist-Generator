@@ -109,18 +109,18 @@ export const journeyTogetherSheetMapping: SheetMapping = {
     starting_enegy_position: 185,
     decklist: {
       pokemon: {
-          quantity: { x: 270, y: 700, size: 8},
-          name: { x: 300, y: 700, size: 8},
-          set: { x: 480, y: 700, size: 8},
-          number: { x: 510, y: 700, size: 8},
+          quantity: { x: 270, y: 648, size: 8},
+          name: { x: 300, y: 648, size: 8},
+          set: { x: 480, y: 648, size: 8},
+          number: { x: 510, y: 648, size: 8},
       },
       trainer: {
-        quantity: { x: 270, y: 510, size: 10},
-        name: { x: 300, y: 510, size: 10},
+        quantity: { x: 270, y: 470, size: 10},
+        name: { x: 300, y: 470, size: 10},
       },
       energy: {
-        quantity: { x: 270, y: 228, size: 10},
-        name: { x: 300, y: 228, size: 10},
+        quantity: { x: 270, y: 185, size: 10},
+        name: { x: 300, y: 185, size: 10},
       },
   }
 } 
