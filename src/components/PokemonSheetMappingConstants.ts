@@ -128,7 +128,9 @@ export const journeyTogetherSheetMapping: SheetMapping = {
 export const getSheetMappingFromFormVersion = (formVersion: FormVersion) => {
     if (formVersion === FormVersion.SurgingSparks) {
         return surgingSparksSheetMapping;
-    } else {
+    } else if (formVersion === FormVersion.JourneyTogether) {
         return journeyTogetherSheetMapping;
+    } else {
+      throw Error("Sheet does not exist");
     }
 }
