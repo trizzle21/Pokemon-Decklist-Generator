@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: block;
+}

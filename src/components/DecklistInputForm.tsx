@@ -14,6 +14,11 @@ export type FormData = {
   decklist: string;
 };
 
+export type FormErrors = {
+  [K in keyof FormData]?: string;
+};
+
+
 export const PlayerForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     formVersion: FormVersion.JourneyTogether,
@@ -25,12 +30,15 @@ export const PlayerForm: React.FC = () => {
     deckListName: 'Default Deck Name',
     decklist: '',
   });
+  
+  const [errors, setErrors] = useState<FormErrors>();
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
 
   return (
     <form className="player-form">
@@ -135,7 +143,8 @@ export const PlayerForm: React.FC = () => {
           required
         />
       </div>
-      <PdfDownloader formData={formData}/>
+      {errors && <span className="error">{errors.decklist}</span>}
+      <PdfDownloader formData={formData} setErrors={setErrors}/>
 
     </form>
   );

@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import { PDFDocument } from "pdf-lib";
 import { drawOnPDF } from './PdfDrawer';
-import { FormData } from './DecklistInputForm';
+import { FormData, FormErrors } from './DecklistInputForm';
 import { Decklist, parseDeckList } from './DeckListParser';
 import { FormVersion } from './FormVersion';
+import { validateDecklist } from "./Validator";
 
 interface PdfDownloaderProps {
   formData: FormData;
+  setErrors: (errors: FormErrors | undefined) => void;
 }
 
 export type DateOfBirth = {
@@ -25,7 +27,7 @@ export type ParsedFormData = {
   formVersion: FormVersion;
 }
 
-export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData }) => {
+export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData, setErrors }) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,6 +57,12 @@ export const PdfDownloader: React.FC<PdfDownloaderProps> = ({ formData }) => {
     if (formData.decklist) {
       parsedDecklist = parseDeckList(formData.decklist);
     }
+    const errors = validateDecklist(parsedDecklist!);
+    setErrors(errors);
+    if (errors) {
+      return;
+    }
+
     const parsedData: ParsedFormData = {
       name: formData.name,
       playerId: formData.playerId,
